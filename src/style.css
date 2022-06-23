@@ -19,3 +19,11 @@ nav{
 .nav-header{
     display: inline;
 }
+
+.nav > .nav-header > .nav-title {
+    font-size: 30px;
+    padding: 10px 50px;
+    display: inline-block;
+    font-weight: 1000;
+}
+
