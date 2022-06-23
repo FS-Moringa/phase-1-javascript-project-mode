@@ -62,5 +62,23 @@ a:hover {
         top: 0px;
     }
 
+    .nav>.nav-responsive>label {
+        width: 60px;
+        height: 60px;
+        display: inline-block;
+        padding: 10px;
+    }
+
+    .nav>.nav-responsive>label>span {
+        width: 25px;
+        height: 10px;
+        display: block;
+        border-top: 2px solid #121117;
+    }
+
+    
+
+
+
 
 }
