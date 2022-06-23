@@ -3,27 +3,57 @@
     box-sizing: border-box;
 }
 
-body{
-    background-image: linear-gradient(to right,#121117,#181820);
+body {
+    background-image: linear-gradient(to right, #121117, #181820);
     font-family: 'Nanum Gothic', sans-serif;
     color: whitesmoke;
 }
 
-nav{
+/* Navigation Section */
+
+nav {
     position: relative;
     height: 50px;
     width: 100%;
     font-size: 1.5rem;
 }
 
-.nav-header{
+.nav-header {
     display: inline;
 }
 
-.nav > .nav-header > .nav-title {
+.nav>.nav-header>.nav-title {
     font-size: 30px;
-    padding: 10px 50px;
+    padding: 20px 50px;
     display: inline-block;
     font-weight: 1000;
+    color: #fc6a03;
 }
 
+.nav>.navbar {
+    float: right;
+    display: inline;
+    font-size: 20px;
+}
+
+.nav>.navbar li {
+    display: inline-block;
+    padding: 25px 0px;
+}
+
+a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: 400;
+    padding: 10px;
+}
+
+a:hover {
+    color: #fc6a03;
+}
+
+/* Media Query for Navigation Bar */
+
+@media (max-width:650px){
+    
+}
