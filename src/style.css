@@ -54,6 +54,13 @@ a:hover {
 
 /* Media Query for Navigation Bar */
 
-@media (max-width:650px){
-    .nav > .nav-responsive
+@media (max-width:650px) {
+    .nav>.nav-responsive {
+        position: absolute;
+        display: inline-block;
+        right: 0px;
+        top: 0px;
+    }
+
+
 }
