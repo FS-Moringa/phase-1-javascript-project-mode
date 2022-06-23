@@ -53,7 +53,30 @@ a:hover {
     color: #fc6a03;
 }
 
+.container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
 
+.container .landing-text{
+    position: relative;
+    max-width: 650px;
+}
+
+.container .landing-images{
+    display: flex;
+    width: 600px;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 50px;
+}
+
+.container .landing-images img{
+    max-width: 350px;
+}
 
 
 
