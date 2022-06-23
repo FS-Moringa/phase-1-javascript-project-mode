@@ -52,6 +52,65 @@ a:hover {
     color: #fc6a03;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Media Query for Navigation Bar */
 
 @media (max-width:650px) {
@@ -76,7 +135,26 @@ a:hover {
         border-top: 2px solid #121117;
     }
 
-    
+    .nav>.navbar {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 0px;
+        background-color: #121117;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0px;
+        transition: all 0.3s ease-in;
+    }
+
+    .nav > #nav-responsive:not(:checked) ~ .navbar{
+        height: 0px;
+    }
+
+    .nav > #nav-responsive:checked ~ .navbar{
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+    }
 
 
 
