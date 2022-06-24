@@ -131,6 +131,13 @@ a:hover {
 }
 
 /* Markets Section */
+#markets .markets-container h2{
+    padding: 30px;
+    font-size: 2.5rem;
+    color: #fc6a03;
+}
+
+
 
 
 
