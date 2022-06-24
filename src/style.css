@@ -162,6 +162,13 @@ a:hover {
     overflow: hidden;
 }
 
+.slides {
+    display: none;
+    animation-name: slider;
+    animation-duration: 1s;
+    overflow: hidden;
+}
+
 
 
 
