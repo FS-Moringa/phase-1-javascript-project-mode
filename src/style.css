@@ -200,7 +200,7 @@ a:hover {
     font-size: 2.5rem;
 }
 
-#services .services-container .wrapper p{
+#services .services-container .wrapper p {
     padding: 10px;
 }
 
@@ -218,7 +218,7 @@ a:hover {
 }
 
 
-#services .services-container .wrapper{
+#services .services-container .wrapper {
     width: 50%;
     margin: 7% 2% 0;
 }
@@ -234,27 +234,52 @@ a:hover {
     width: 50vw;
 }
 
-#services .services-container .nested .nested-image{ 
+#services .services-container .nested .nested-image {
     width: 18%;
     height: 100px;
     display: inline-block;
     margin: 10px;
 }
 
-#services .services-container .nested .nested-text{
-  display: inline-block;
-  width: 50%;
-  margin: 4%;
-  height: 20vh;
-  font-size: 1.2rem;
+#services .services-container .nested .nested-text {
+    display: inline-block;
+    width: 50%;
+    margin: 4%;
+    height: 20vh;
+    font-size: 1.2rem;
 }
 
-#services .services-container .nested .nested-text h4{
+#services .services-container .nested .nested-text h4 {
     padding-top: 10px;
     font-size: 2rem;
     padding: 10px 0;
-    color:#fc6a03 ;
+    color: #fc6a03;
 }
+
+
+
+/* Testimonials Section */
+.testimonials-container {
+    padding: 40px 0;
+}
+
+.testimonials-container .header-section {
+    padding: 0 25px;
+}
+
+.header-section h3,
+.header-section p {
+    text-align: center;
+}
+
+.testimonials-container .carousel {
+    display: flex;
+}
+
+
+
+
+
 
 
 
