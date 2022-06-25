@@ -195,19 +195,16 @@ a:hover {
     display: flex;
 }
 
-#services .services-container h4 {
+#services .services-container .wrapper h4 {
     padding: 20% 2% 1%;
     font-size: 2.5rem;
 }
 
-#services .services-container p {
-    padding: 1% 2%;
-    font-size: 1.4rem;
-    color: lightgrey;
+#services .services-container .wrapper p{
+    padding: 10px;
 }
 
-
-#services .services-container button {
+#services .services-container .wrapper button {
     margin: 1% 4%;
     width: 200px;
     height: 50px;
@@ -216,12 +213,48 @@ a:hover {
     background: #fc6a03;
     font-size: 1.3rem;
     color: whitesmoke;
+    margin: 20px;
+
 }
 
 
+#services .services-container .wrapper{
+    width: 50%;
+    margin: 7% 2% 0;
+}
 
+#services .services-container .nested-container {
+    width: 50%;
+    display: table;
+    padding: 5px;
+    margin: 5px 0;
+}
 
+#services .services-container .nested {
+    width: 50vw;
+}
 
+#services .services-container .nested .nested-image{ 
+    width: 18%;
+    height: 100px;
+    display: inline-block;
+    margin: 10px;
+}
+
+#services .services-container .nested .nested-text{
+  display: inline-block;
+  width: 50%;
+  margin: 4%;
+  height: 20vh;
+  font-size: 1.2rem;
+}
+
+#services .services-container .nested .nested-text h4{
+    padding-top: 10px;
+    font-size: 2rem;
+    padding: 10px 0;
+    color:#fc6a03 ;
+}
 
 
 
