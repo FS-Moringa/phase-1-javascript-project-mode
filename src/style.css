@@ -274,7 +274,43 @@ a:hover {
 
 .testimonials-container .carousel {
     display: flex;
+    justify-content: center;
 }
+
+.testimonials-container .testimonials {
+    flex-direction: column;
+    width: 40vw;
+    height: 30vh;
+    align-items: center;
+    justify-content: flex-start;
+    transition: transform 0.25s;
+    text-align: center;
+    background-color: #121117;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    padding: 30px;
+}
+
+.testimonials-container .active{
+    z-index: 1;
+    display: flex;
+    order: 2;
+    transform: scale(1.1);
+}
+
+.testimonials-container .testimonial-image{
+    border: 50%;
+}
+
+.testimonials .testimonial-text{
+    display: flex;
+    height: 100%;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+}
+
+
+
+
 
 
 
