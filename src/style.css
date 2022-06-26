@@ -257,6 +257,94 @@ a:hover {
     color: #fc6a03;
 }
 
+/* Pin Notes Section */
+.pin-todo{
+    width: 80vw;
+    border-radius: 2em;
+    background: #121117;
+    padding: 1.5rem;
+    margin:8rem auto;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.title{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.todo{
+    display: flex;
+    justify-content: center;
+}
+
+#input{
+    flex: 1;
+    font-size: 1rem;
+    border: 1px solid #181820;
+    outline: none;
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.submit-button,.cancel-button{
+    font-size: 1rem;
+    font-weight: bold;
+    border: 1px solid #181820;
+    color: whitesmoke;
+    padding: 0.5rem 0.8rem;
+    flex: 0 0 0.5rem;
+    cursor: pointer;
+}
+
+.submit-button:hover, .cancel-button:hover{
+    color: #fc6a03;
+    background-color: whitesmoke;
+    transition: all 0.5s;
+}
+
+.todo-pin{
+    margin-top: 2rem;
+}
+
+.li-wrappper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    border-bottom: 1px solid #181820;
+    padding: 1rem;
+}
+
+.list-item:hover i.fas{
+    opacity: 1;
+}
+
+.text{
+    width: 80%;
+}
+
+i.fas{
+    cursor: pointer;
+    opacity: 0;
+}
+
+i.fas .fa-edit:hover{color: blue;}
+i.fas .fa-trash-alt:hover{color: red;}
+i.fas .fa-check:hover{color: green;}
+
+.reset-button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: red;
+    font-size: 1rem;
+    display: block;
+    width: 10rem;
+    border: 1rem;
+    margin: 1rem auto 0;
+}
+
+
 
 
 /* Testimonials Section */
