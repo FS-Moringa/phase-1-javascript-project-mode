@@ -461,3 +461,9 @@ h2 {
 ul {
     list-style-type: none;
 }
+
+.copyright{
+    padding: 20px;
+    color: whitesmoke;
+    font-weight: 500;
+}
