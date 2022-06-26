@@ -51,6 +51,7 @@ a {
 
 a:hover {
     color: #fc6a03;
+    transition: all 0.4s ease;
 }
 
 .container {
@@ -132,8 +133,7 @@ a:hover {
 }
 
 /* Markets Section */
-#markets .markets-container h2,
-    {
+#markets .markets-container h2 {
     padding: 30px;
     font-size: 2.5rem;
     color: #fc6a03;
@@ -391,40 +391,42 @@ h2 {
 }
 
 /* Footer Section */
-.footer{
+.footer {
     background: #121117;
     padding: 0 20px;
 }
 
-.footer-container{
-    width: 95%;
+.footer-container {
+    width: 65%;
     margin: auto;
+    padding: 70px 0;
 }
-.col{
-    width: 25%;
+
+.col {
+    width: 30%;
     padding: 0 20px;
 }
 
-.col h4{
-    font-size: 20px;
+.col h4 {
+    font-size: 1.8rem;
     color: #fc6a03;
-    font-weight: 500;
+    font-weight: 600;
     position: relative;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
 }
 
-.col h4::before{
+.col h4::before {
     position: absolute;
     width: 50px;
     height: 2px;
     box-sizing: border-box;
 }
 
-.col ul li:not(:last-child){
+.col ul li:not(:last-child) {
     margin-bottom: 10px;
 }
 
-.col ul li a{
+.col ul li a {
     font-size: 16px;
     text-decoration: none;
     font-weight: 400;
@@ -432,11 +434,11 @@ h2 {
     transition: all 0.3s ease;
 }
 
-.col ul li a:hover{
+.col ul li a:hover {
     padding-left: 10px;
 }
 
-.col .social-links a{
+.col .social-links a {
     display: inline-block;
     height: 50px;
     width: 50px;
@@ -445,13 +447,17 @@ h2 {
     line-height: 50px;
     border-radius: 50%;
 }
-.row{
+
+.social-links {
+    border: #181820;
+    width: 5vw;
+}
+
+.row {
     display: flex;
     flex-wrap: wrap;
 }
 
-ul{
+ul {
     list-style-type: none;
 }
-
-
