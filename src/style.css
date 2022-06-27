@@ -249,11 +249,11 @@ a:hover {
 
 /* Pin Notes Section */
 .pin-todo{
-    width: 80vw;
+    width: 90vw;
     border-radius: 2em;
     background: #121117;
-    padding: 1.5rem;
-    margin:8rem auto;
+    padding: 10px;
+    margin:5% 5%;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
@@ -262,27 +262,40 @@ a:hover {
     margin-bottom: 1rem;
 }
 
-.todo{
+.new-task{
     display: flex;
     justify-content: center;
+    padding: 30px 20px;
+    position: relative;
 }
 
-#input{
+.new-task #input{
     flex: 1;
+    width: 75%;
+    height: 45px;
+    padding: 10px;
+    font-weight: 500;
     font-size: 1rem;
     border: 1px solid #181820;
     outline: none;
     border-radius: 0.5rem 0 0 0.5rem;
 }
 
+.new-task #input:focus{
+    outline: none;
+    border-color:#fc6a03;
+}
+
 .submit-button,.cancel-button{
     font-size: 1rem;
     font-weight: bold;
     border: 1px solid #181820;
-    color: whitesmoke;
+    color: black;
     padding: 0.5rem 0.8rem;
     flex: 0 0 0.5rem;
     cursor: pointer;
+    outline: none;
+    border-radius: 5px;
 }
 
 .submit-button:hover, .cancel-button:hover{
@@ -291,51 +304,35 @@ a:hover {
     transition: all 0.5s;
 }
 
-.todo-pin{
-    margin-top: 2rem;
+#tasks{
+    border-radius: 10px;
+    width: 100%;
+    padding: 30px 20px;
+    margin-top: 10px;
+    position: relative;
 }
 
-.li-wrappper{
-    display: flex;
-    justify-content: space-between;
+.task {
+    display: text;
+    padding: 10px 10px;
     align-items: center;
-    list-style: none;
-    border-bottom: 1px solid #181820;
-    padding: 1rem;
-}
-
-.list-item:hover i.fas{
-    opacity: 1;
-}
-
-.text{
-    width: 80%;
-}
-
-i.fas{
+    justify-content: space-between;
     cursor: pointer;
-    opacity: 0;
+    border-radius: 8px;
+    border: 1px solid #fc6a03;
+    height: 50px;
+    margin-bottom: 10px;
 }
-
-i.fas .fa-edit:hover{color: blue;}
-i.fas .fa-trash-alt:hover{color: red;}
-i.fas .fa-check:hover{color: green;}
 
 .reset-button{
     border: none;
-    outline: none;
     cursor: pointer;
-    background-color: whitesmoke;
-    color: red;
+    outline: none;
+    border-radius: 5px;
+    width: 10%;
+    height: 30px;
     font-size: 1rem;
-    display: block;
-    width: 10rem;
-    border: 1rem;
-    margin: 1rem auto 0;
 }
-
-
-
 
 /* Testimonials Section */
 

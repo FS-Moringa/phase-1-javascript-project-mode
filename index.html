@@ -20,22 +20,14 @@
             <div class="nav-header">
                 <div class="nav-title">wikiCap</div>
             </div>
-            <!-- <div class="nav-responsive">
-                <label for="nav-responsive" onclick>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label> -->
             </div>
             <div class="menu navbar">
                 <ul>
                     <li> <a href="#">Home</a></li>
-                    <li><a href="#">Markets</a></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Connect</a></li>
+                    <li><a href="#markets">Markets</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
                 </ul>
             </div>
         </nav>
@@ -140,23 +132,13 @@
     <section class="pin-todo">
         <form class="pin-notes">
             <h4 class="title">Pin Notes Here</h4>
-            <div class="todo">
+            <div class="new-task">
                 <input type="text" id="input" placeholder="schedule your trades here!">
-                <button type="submit" class="submit-button">Submit</button>
-                <button type="button" class="cancel-button">Cancel</button>
+                <button type="submit" class="submit-button">Post</button>
             </div>
         </form>
-        <div class="todo-pin">
-            <ul class="li-wrapper">
-                <!-- <li class="list-item">
-                    <p class="text">Lorem</p>
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-check"></i>
-                    <i class="fas fa-trash-alt"></i>
-                </li> -->
-            </ul>
-            <button class="reset-button">Clear List</button>
-        </div>
+        <div id="tasks"></div>
+        <button class="reset-button">Clear List</button>
     </section>
 
     <!-- Highlight Coins -->

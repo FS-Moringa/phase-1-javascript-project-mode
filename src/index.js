@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // let requestOptions = {
-    //     method: 'GET',
-    //     redirect: 'follow'
-    // };
+    // // let requestOptions = {
+    // //     method: 'GET',
+    // //     redirect: 'follow'
+    // // };
 
-    // dd086e9d-4f05-4e3f-b762-dc7d5a0a0fa3
+    // // dd086e9d-4f05-4e3f-b762-dc7d5a0a0fa3
     //api get request for crypto asset data to populate currency market section
 
     fetch('https://api.coincap.io/v2/assets/?_limit=20')
@@ -71,31 +71,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     //declare variables
-    let newsItems = []
+     let newsItems = []
 
-    //News API GET Request
+         //News API GET Request
     fetch('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=d80667da1c2d49ae8b0418667666bf42&pageSize=5')
         .then(function (response) {
             return response.json()
         })
         .then(function (data) {
             console.log(data.articles)
-            data.articles.forEach(articles=> {
+            data.articles.forEach(articles => {
                 newsItems.push({
                     title: articles.title,
                     link: articles.url
                 })
                 appendNews(newsItems)
             })
-            
+
             console.log(newsItems)
         })
         .catch(err => console.log(err))
-        console.log(newsItems)
+    console.log(newsItems)
 
-        console.log(newsItems.articles)
+    console.log(newsItems.articles)
     let newsList = document.querySelector("ul#newslist")
-    function appendNews(newsItems){
+
+    function appendNews(newsItems) {
         for (let i = 0; i < newsItems.length; i++) {
             let li = document.createElement("li")
             newsContent = `<a href="${newsItems[i].link} "target="_blank"> ${newsItems[i].title}</a>`
@@ -103,22 +104,38 @@ document.addEventListener('DOMContentLoaded', function () {
             newsList.appendChild(li)
         }
     }
-    
+
+    //Pin Notes Section 
+
+    //Declare Variables
+    const form = document.querySelector(".pin-notes")
+    const tasks = document.querySelector('#tasks')
 
 
-    // for (let i = 0; i < newsItems.title; i++) {
-    //     let li = document.createElement("li")
-    //     let link = document.createElement("a")
-    //     link.href = news.link
-    //     link.textContent = news.title
-    //     link.target = "_blank"
-    //     li.appendChild(link)
-    //     newsList.appendChild(li)
-    // })
+    form.addEventListener("submit", create)
 
-    // {
-    //     title: data.results.title,
-    //     url: data.url
-    // }
+    const input = document.querySelector("#input")
+
+    function create(event) {
+        event.preventDefault()
+        fetch("http://localhost:3000/posts", {
+            method: 'POST',
+            body: JSON.stringify({
+                text: input.value
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        }).then(function (response) {
+            response.json().then(li)
+        })
+    }
+
+
+    function li(input) {
+        let listItem = document.createElement("li")
+        listItem.innerHTML = input.text
+        tasks.appendChild(listItem)
+    }
 
 })
