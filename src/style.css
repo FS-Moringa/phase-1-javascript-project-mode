@@ -157,34 +157,7 @@ a:hover {
 }
 
 /* News Section */
-#news-slider {
-    width: 80%;
-    margin: 0 auto;
-    overflow: hidden;
-}
 
-.slides {
-    display: none;
-    animation-name: slider;
-    animation-duration: 1s;
-    overflow: hidden;
-}
-
-#dot {
-    margin: 0 auto;
-    text-align: center;
-}
-
-.dot {
-    border-radius: 50%;
-    padding: 8px;
-    margin: 8px;
-    display: inline-block;
-}
-
-.active {
-    background: black;
-}
 
 /* Services Section */
 #services .services-container {

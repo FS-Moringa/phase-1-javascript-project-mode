@@ -1,91 +1,124 @@
-// let requestOptions = {
-//     method: 'GET',
-//     redirect: 'follow'
-// };
+document.addEventListener('DOMContentLoaded', function () {
+    // let requestOptions = {
+    //     method: 'GET',
+    //     redirect: 'follow'
+    // };
 
-// dd086e9d-4f05-4e3f-b762-dc7d5a0a0fa3
-//api get request for crypto asset data to populate currency market section
+    // dd086e9d-4f05-4e3f-b762-dc7d5a0a0fa3
+    //api get request for crypto asset data to populate currency market section
 
-fetch('https://api.coincap.io/v2/assets/?_limit=20')
-    .then(function (response) {
-        console.log(response)
-        return response.json()
-    })
-    //the data will then be input into the function populateCryptoTable
-    .then(function (data) {
-        console.log(data)
-        populateCryptoTable(data)
-    })
+    fetch('https://api.coincap.io/v2/assets/?_limit=20')
+        .then(function (response) {
+            console.log(response)
+            return response.json()
+        })
+        //the data will then be input into the function populateCryptoTable
+        .then(function (data) {
+            console.log(data)
+            populateCryptoTable(data)
+        })
 
-    //catch method to log errors
-    .catch(error => console.log(error))
+        //catch method to log errors
+        .catch(error => console.log(error))
 
 
-//function that populates the currency market section with data from the api
-function populateCryptoTable(data) {
-    let market = [];
-    let coinName = [];
-    let lastPrice = [];
-    let TwentyFourHourChange = [];
-    let chart = [];
-    let marketCap = [];
+    //function that populates the currency market section with data from the api
+    function populateCryptoTable(data) {
+        let market = [];
+        let coinName = [];
+        let lastPrice = [];
+        let TwentyFourHourChange = [];
+        let chart = [];
+        let marketCap = [];
 
-    data['data'].forEach((coin) => {
-        market.push(coin.symbol);
-        coinName.push(coin.name);
-        lastPrice.push(coin.priceUsd);
-        TwentyFourHourChange.push(coin.changePercent24Hr);
-        chart.push(coin.vwap24Hr);
-        marketCap.push(coin.marketCapUsd);
-    })
+        data['data'].forEach((coin) => {
+            market.push(coin.symbol);
+            coinName.push(coin.name);
+            lastPrice.push(coin.priceUsd);
+            TwentyFourHourChange.push(coin.changePercent24Hr);
+            chart.push(coin.vwap24Hr);
+            marketCap.push(coin.marketCapUsd);
+        })
 
-    let cryptoTable = document.querySelector('#crypto-table-body')
-    let add = "";
+        let cryptoTable = document.querySelector('#crypto-table-body')
+        let add = "";
 
-    for (let i = 0; i < coinName.length; i++) {
-        add += "<tr>"
-        add += "<td>" + market[i] + "</td>"
-        add += "<td>" + coinName[i] + "</td>"
-        add += "<td>$" + lastPrice[i] + "</td>"
-        add += "<td>" + TwentyFourHourChange[i] + "</td>"
-        add += "<td>" + chart[i] + "</td>"
-        add += "<td>$" + marketCap[i] + "</td>"
+        for (let i = 0; i < coinName.length; i++) {
+            add += "<tr>"
+            add += "<td>" + market[i] + "</td>"
+            add += "<td>" + coinName[i] + "</td>"
+            add += "<td>$" + lastPrice[i] + "</td>"
+            add += "<td>" + TwentyFourHourChange[i] + "</td>"
+            add += "<td>" + chart[i] + "</td>"
+            add += "<td>$" + marketCap[i] + "</td>"
 
-        // turn the 24hr price change price change either green or red
-        if (TwentyFourHourChange[i] > 0) {
-            add +=
-                "<td class = green-text>" + TwentyFourHourChange[i] + "</td>"
-        } else {
-            add +=
-                "<td class = red-text>" + TwentyFourHourChange[i] + "</td>"
+            // turn the 24hr price change price change either green or red
+            if (TwentyFourHourChange[i] > 0) {
+                add +=
+                    "<td class = green-text>" + TwentyFourHourChange[i] + "</td>"
+            } else {
+                add +=
+                    "<td class = red-text>" + TwentyFourHourChange[i] + "</td>"
+            }
+            add += "</tr>"
         }
-        add += "</tr>"
+        cryptoTable.innerHTML = add
+
     }
-    cryptoTable.innerHTML = add
-
-}
 
 
 
-//News API GET Request
 
-fetch('https://newsdata.io/api/1/news?apikey=pub_85111e53b643cfda4841a1cccecbb8fa3f37&q=crypto&language=en&category=business')
-    .then(function (response) {
-        return response.json()
-    })
-    .then(function (data) {
-        console.log(data)
-        displayNews(data)
-    })
-    .catch(err => console.log(err))
 
-function displayNews(data) {
-    for (let i = 0; i < data.length; i++) {
-        let newsSlide = document.getElementById('news-slider')
-        newsSlide.innerHTML +=
-            `<div class='slides'> <h3>${data[i].title}</h3> <br>
-            By:${data[i].creator} ${data[i].pubDate} <br>
-            ${data[i].description} 
-            ${data[i].link} </div> <br>`
+    //declare variables
+    let newsItems = []
+
+    //News API GET Request
+    fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=d80667da1c2d49ae8b0418667666bf42')
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            console.log(data.articles)
+            data.articles.forEach(articles=> {
+                newsItems.push({
+                    title: articles.title,
+                    link: articles.url
+                })
+                appendNews(newsItems)
+            })
+            
+            console.log(newsItems)
+        })
+        .catch(err => console.log(err))
+        console.log(newsItems)
+
+        console.log(newsItems.articles)
+    let newsList = document.querySelector("ul#newslist")
+    function appendNews(newsItems){
+        for (let i = 0; i < newsItems.length; i++) {
+            let li = document.createElement("li")
+            newsContent = `<a href="${newsItems[i].link}"> ${newsItems[i].title}</a>`
+            li.innerHTML = newsContent
+            newsList.appendChild(li)
+        }
     }
-}
+    
+
+
+    // for (let i = 0; i < newsItems.title; i++) {
+    //     let li = document.createElement("li")
+    //     let link = document.createElement("a")
+    //     link.href = news.link
+    //     link.textContent = news.title
+    //     link.target = "_blank"
+    //     li.appendChild(link)
+    //     newsList.appendChild(li)
+    // })
+
+    // {
+    //     title: data.results.title,
+    //     url: data.url
+    // }
+
+})
