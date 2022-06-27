@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let newsItems = []
 
     //News API GET Request
-    fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=d80667da1c2d49ae8b0418667666bf42')
+    fetch('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=d80667da1c2d49ae8b0418667666bf42&pageSize=5')
         .then(function (response) {
             return response.json()
         })
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function appendNews(newsItems){
         for (let i = 0; i < newsItems.length; i++) {
             let li = document.createElement("li")
-            newsContent = `<a href="${newsItems[i].link}"> ${newsItems[i].title}</a>`
+            newsContent = `<a href="${newsItems[i].link} "target="_blank"> ${newsItems[i].title}</a>`
             li.innerHTML = newsContent
             newsList.appendChild(li)
         }

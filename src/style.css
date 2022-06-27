@@ -157,7 +157,24 @@ a:hover {
 }
 
 /* News Section */
+#news{
+    align-items: center;
+    justify-content: center;
+    margin: 5%;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
 
+#news .news-card .news-card-header{
+    font-size: 1.8rem;
+    color: #fc6a03;
+    padding: 10px 0;
+}
+
+#newslist li{
+    padding: 8px 0;
+    font-size: 1rem;
+    color: whitesmoke;
+}
 
 /* Services Section */
 #services .services-container {
