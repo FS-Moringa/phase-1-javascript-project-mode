@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // // dd086e9d-4f05-4e3f-b762-dc7d5a0a0fa3
     //api get request for crypto asset data to populate currency market section
-
     fetch('https://api.coincap.io/v2/assets/?_limit=20')
         .then(function (response) {
             console.log(response)
@@ -71,9 +70,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     //declare variables
-     let newsItems = []
+    let newsItems = []
 
-         //News API GET Request
+    //News API GET Request
     fetch('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=d80667da1c2d49ae8b0418667666bf42&pageSize=5')
         .then(function (response) {
             return response.json()
