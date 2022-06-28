@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         for (let i = 0; i < coinName.length; i++) {
             add += "<tr>"
-            add += "<td>" + Math.round(market[i]).toFixed(3) + "</td>"
-            add += "<td>" + Math.round(coinName[i]).toFixed(3) + "</td>"
+            add += "<td>" + market[i] + "</td>"
+            add += "<td>" + coinName[i] + "</td>"
             add += "<td>$" + Math.round(lastPrice[i]).toFixed(3) + "</td>"
             add += "<td>" + Math.round(TwentyFourHourChange[i]).toFixed(3) + "</td>"
             add += "<td>" + Math.round(chart[i]).toFixed(3) + "</td>"
