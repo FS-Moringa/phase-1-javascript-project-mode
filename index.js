@@ -73,16 +73,16 @@ document.addEventListener('DOMContentLoaded', function () {
     let newsItems = []
 
     //News API GET Request
-    fetch('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=d80667da1c2d49ae8b0418667666bf42&pageSize=5')
+    fetch('https://newsdata.io/api/1/news?apikey=pub_85111e53b643cfda4841a1cccecbb8fa3f37&q=crypto&language=en&category=business ')
         .then(function (response) {
             return response.json()
         })
         .then(function (data) {
-            console.log(data.articles)
-            data.articles.forEach(articles => {
+            console.log(data.results)
+            data.results.forEach(results => {
                 newsItems.push({
-                    title: articles.title,
-                    link: articles.url
+                    title: results.title,
+                    link: results.link
                 })
                 appendNews(newsItems)
             })
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(err => console.log(err))
     console.log(newsItems)
 
-    console.log(newsItems.articles)
+    console.log(newsItems)
     let newsList = document.querySelector("ul#newslist")
 
     function appendNews(newsItems) {
